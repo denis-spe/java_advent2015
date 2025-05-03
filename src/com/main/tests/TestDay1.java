@@ -1,3 +1,6 @@
+/*
+    Praise the LORD GOD of host.
+ */
 package com.main.tests;
 
 import org.junit.Test;
@@ -5,9 +8,16 @@ import static com.main.advent2015.day1.Day1.part1;
 import static com.main.advent2015.day1.Day1.part2;
 import static org.junit.Assert.assertEquals;
 
-public class TestDay1 {
+/**
+ * Testing day one.
+ */
+public class TestDay1 implements TestDay {
 
+    /**
+     * Test part one from a day.
+     */
     @Test
+    @Override
     public void testPart1() {
         assertEquals(
                 0,
@@ -47,7 +57,11 @@ public class TestDay1 {
         );
     }
 
+    /**
+     * Test part two from a day.
+     */
     @Test
+    @Override
     public void testPart2() {
         assertEquals(
                 1,

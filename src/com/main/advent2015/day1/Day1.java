@@ -5,9 +5,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 
+/**
+ * --- Day 1: Not Quite Lisp ---
+ */
 public class Day1 {
     /**
-     * ------------ Part 1 --------------
+     * --- Part 1 ---
      * <p>
      * Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's
      * fresh out! To save Christmas, he needs you to collect fifty stars by December 25th.
@@ -28,7 +31,19 @@ public class Day1 {
      * The apartment building is very tall, and the basement is very deep; he will never find the top or
      * bottom floors.
      * <p>
+     *
+     * For example:
+     * <p>
+     * - (()) and ()() both result in floor 0. <br>
+     * - ((( and (()(()( both result in floor 3. <br>
+     * - ))((((( also results in floor 3. <br>
+     * - ()) and ))( both result in floor -1 (the first basement level). <br>
+     * - ))) and )())()) both result in floor -3.
+     * <p>
      * To what floor do the instructions take Santa?
+     *
+     * @param day A text input for puzzle submission.
+     * @param contents For testing.
      * @return a floor where santa will be.
      */
     public static int part1(@Nullable String day, @Nullable String contents){
@@ -51,7 +66,15 @@ public class Day1 {
      * (floor -1). The first character in the instructions has position 1,
      * the second character has position 2, and so on.
      * <p>
+     * For example:
+     * <p>
+     * - ) causes him to enter the basement at character position 1. <br>
+     * - ()()) causes him to enter the basement at character position 5.
+     * <p>
      * What is the position of the character that causes Santa to first enter the basement?
+     *
+     * @param day A text input for puzzle submission.
+     * @param contents For testing.
      * @return position where santa enter the basement.
      */
     public static int part2(@Nullable String day, @Nullable String contents){

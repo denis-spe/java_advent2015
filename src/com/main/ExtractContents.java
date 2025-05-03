@@ -8,7 +8,7 @@ public class ExtractContents {
     public final String content;
 
     /**
-     * Parts Constructor
+     * ExtractContents Constructor
      * @param day name from the advent 2015 like day1, day2 etc.
      */
     public ExtractContents(@Nullable String day, @Nullable String contents) {
