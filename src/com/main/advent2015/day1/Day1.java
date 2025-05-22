@@ -48,7 +48,7 @@ public class Day1 {
      */
     public static int part1(@Nullable String day, @Nullable String contents){
         // Initialize the ExtractContents object.
-        ExtractContents extractContents = new ExtractContents(day, contents);
+        ExtractContents extractContents = new ExtractContents(day, contents, null);
 
         var finalFloor = toArray(extractContents.content)
                 .stream()
@@ -79,7 +79,7 @@ public class Day1 {
      */
     public static int part2(@Nullable String day, @Nullable String contents){
         // Initialize the ExtractContents object.
-        ExtractContents extractContents = new ExtractContents(day, contents);
+        ExtractContents extractContents = new ExtractContents(day, contents, null);
 
         var floors = toArray(extractContents.content)
                 .stream()

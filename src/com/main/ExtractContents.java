@@ -11,9 +11,9 @@ public class ExtractContents {
      * ExtractContents Constructor
      * @param day name from the advent 2015 like day1, day2 etc.
      */
-    public ExtractContents(@Nullable String day, @Nullable String contents) {
+    public ExtractContents(@Nullable String day, @Nullable String contents, @Nullable String lastChar) {
         if (day != null) {
-            TxtFileReader txtFileReader = new TxtFileReader(day);
+            TxtFileReader txtFileReader = new TxtFileReader(day, lastChar);
             this.content = txtFileReader.contents();
         } else if (contents != null) {
             this.content = contents;

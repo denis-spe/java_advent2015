@@ -14,7 +14,7 @@ public class TestTxtFileReader {
 
     @Before
     public void setup(){
-        txtFileReader = new TxtFileReader("day1");
+        txtFileReader = new TxtFileReader("day1", null);
     }
     @Test
     public void content(){

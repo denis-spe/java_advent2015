@@ -7,11 +7,26 @@ import com.main.ExtractContents;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 /**
  * --- Day 2: I Was Told There Would Be No Math ---
  */
 public class Day2 {
+
+    /**
+     * Extract the contents from the file.
+     * @param day A day of advent.
+     * @param contents A simple input for testing.
+     * @return A list of string.
+     */
+    public static Stream<String> contents(@Nullable String day, @Nullable String contents) {
+        // Initialize the ExtractContents object.
+        ExtractContents extractContents = new ExtractContents(day, contents, "\n");
+        // Split the string by new line.
+        return Arrays.stream(extractContents.content.split("\n"));
+    }
+
     /**
      * --- Part One ---
      * <p>
@@ -37,13 +52,12 @@ public class Day2 {
      * @return Total square feet of wrapping paper
      */
     public static int part1(@Nullable String day, @Nullable String contents){
-        // Initialize the ExtractContents object.
-        ExtractContents extractContents = new ExtractContents(day, contents);
-
-        // Split the string by new line.
-        var dimensions = Arrays.stream(extractContents.content.split("\n")).toList();
-
-        return 0;
+        Stream<String> contentsList = contents(day, contents);
+        return contentsList
+                .map(Box::toBox)
+                .map(Present::surfaceArea)
+                .reduce(Integer::sum)
+                .orElse(0);
     }
 
     /**
@@ -70,6 +84,11 @@ public class Day2 {
      * @return Total feet of ribbon.
      */
     public static int part2(@Nullable String day, @Nullable String contents){
-        return 0;
+        Stream<String> contentsList = contents(day, contents);
+        return contentsList
+                .map(Box::toBox)
+                .map(Present::totalFeet)
+                .reduce(Integer::sum)
+                .orElse(0);
     }
 }
